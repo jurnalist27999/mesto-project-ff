@@ -16,11 +16,11 @@ const profileAddbutton = document.querySelector(".profile__add-button");
 const placesList = document.querySelector(".places__list");
 
 initialCards.forEach((item) => {
-  const card = createCard(item, DeleteCard);
+  const card = createCard(item, deleteCard);
   placesList.append(card);
 });
 
-function createCard(element, DeleteCard) {
+function createCard(element, deleteCard) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate
     .querySelector(".places__item")
@@ -30,15 +30,11 @@ function createCard(element, DeleteCard) {
   cardElement.querySelector(".card__image").alt = element.alt;
   cardElement.querySelector(".card__title").textContent = element.name;
 
-  cardDeletebutton.addEventListener("click", function (DeleteCard) {
-    const placesList = cardDeletebutton.closest(".card");
-    placesList.remove();
-  });
+  cardDeletebutton.addEventListener("click", () => deleteCard(cardElement));
 
   return cardElement;
 }
 
-function DeleteCard() {
-  card = cardElement.querySelector(".card");
+function deleteCard(card) {
   card.remove();
 }
