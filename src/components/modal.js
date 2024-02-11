@@ -14,7 +14,7 @@ export function closePopup(popup) {
   document.removeEventListener("keydown", closeByEscape);
 };
 
-export const closeByEscape = (evt) => {
+const closeByEscape = (evt) => {
   if (evt.key === "Escape") {
     const openPopupEsc = document.querySelector(".popup_is-opened");
     closePopup(openPopupEsc);

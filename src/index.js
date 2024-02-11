@@ -1,9 +1,9 @@
-//Добрый день! Прошу прощения,что пишу вам здесь. Никогла такого не делала просто. Надеюсь это не сильно критично.
-//Во-первых, хотела извиниться за столь долгое исправление ошибок. Работаю иногда сутками:( я журналист. Не всегда удается быстро разрешать все моменты по учебе.
-//Во-вторых, вы указали ошибку на первом ревью - "при открытии попапа профиля нужно вставлять в его инпуты данные пользователя, которые отображены сейчас на сайте, чтобы можно было их отредактировать сразу и обновить", но у меня так и сделано, как показано в теории. Сверилась с однокурсниками,кто сдал проект, у них также, как у меня. Не понимаю,тогда что не так по вашему,скажите, пожалуйста?
+
+
+
 import "./pages/index.css";
 import { initialCards } from "./cards.js";
-import { openPopup, closePopup, closeByEscape } from "./components/modal.js";
+import { openPopup, closePopup} from "./components/modal.js";
 import { createCard, deleteCard, likeCard } from "./components/card.js";
 const placesList = document.querySelector(".places__list");
 const formEdit = document.querySelector(".popup_type_edit"); // попап редактирования
@@ -63,7 +63,6 @@ popups.forEach((popup) => {
     }
     if (evt.target.classList.contains("popup__close")) {
       closePopup(popup);
-      closeByEscape(popup); //точно ли сюда нужно функцию по закрытию по esc передать? неясно.
     }
   });
 });
@@ -73,9 +72,8 @@ function handleFormSubmit(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   const name = nameInput.value;
   const job = jobInput.value;
-
-  document.querySelector(".profile__title").textContent = name; // Вставьте новые значения с помощью textContent
-  document.querySelector(".profile__description").textContent = job;
+  nameTitle.textContent = name; // Вставьте новые значения с помощью textContent
+  jobDescription.textContent = job;
 
   closePopup(document.querySelector(".popup_is-opened"));
 }
