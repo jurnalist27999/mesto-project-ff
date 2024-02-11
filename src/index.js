@@ -1,9 +1,6 @@
-
-
-
 import "./pages/index.css";
 import { initialCards } from "./cards.js";
-import { openPopup, closePopup} from "./components/modal.js";
+import { openPopup, closePopup } from "./components/modal.js";
 import { createCard, deleteCard, likeCard } from "./components/card.js";
 const placesList = document.querySelector(".places__list");
 const formEdit = document.querySelector(".popup_type_edit"); // попап редактирования
