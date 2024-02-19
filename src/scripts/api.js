@@ -55,7 +55,6 @@ export function addCard(name, link) {
 
 // 8. Удаление карточки
 // DELETE https://nomoreparties.co/v1/cohortId/cards/cardId
-// DELETE https://nomoreparties.co/v1/cohortId/cards/5d1f0611d321eb4bdcd707dd
 export function deleteCardApi(cardId) {
   return api({ url: `cards/${cardId}`, method: 'DELETE' });
 }

@@ -41,12 +41,13 @@ export function likeCard(e, cardId, cardLikeNumber) {
     unlikeCardApi(cardId)
       .then((card) => {
         cardLikeNumber.textContent = card.likes.length;
+        e.target.classList.remove("card__like-button_is-active");
       });
   } else {
     likeCardApi(cardId)
       .then((card) => {
         cardLikeNumber.textContent = card.likes.length;
+        e.target.classList.add("card__like-button_is-active");
       });
   }
-  e.target.classList.toggle("card__like-button_is-active");
 }
