@@ -20,18 +20,7 @@ export function closePopup(popup) {
 //реализация закрытия активного попапа
 export function closeActivePopup() {
   const activePopup = document.querySelector(".popup_is-opened");
-  const button = activePopup.querySelector(".popup__button");
   closePopup(activePopup);
-  if (button) {
-    button.textContent = 'Сохранить';
-  }
-}
-
-//реализация закрытия активного попапа
-export function processForm() {
-  const activePopup = document.querySelector(".popup_is-opened");
-  const button = activePopup.querySelector(".popup__button");
-  button.textContent = 'Сохранение...';
 }
 
 //обработчик закрытия по escape
